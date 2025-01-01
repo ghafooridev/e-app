@@ -1,0 +1,26 @@
+// model User {
+//   id            String    @id @default(cuid())
+//   email         String    @unique
+//   password      String?
+//   emailVerified DateTime?
+//   secret2FA     String?
+//   accounts      Account[]
+//   sessions      Session[]
+// }
+
+// model Account {
+//   id                String @id @default(cuid())
+//   type              String
+//   provider          String
+//   providerAccountId String
+//   userId            String
+//   user              User   @relation(fields: [userId], references: [id])
+// }
+
+// model Session {
+//   id           String   @id @default(cuid())
+//   sessionToken String   @unique
+//   userId       String
+//   user         User     @relation(fields: [userId], references: [id])
+//   expires      DateTime
+// }
