@@ -1,10 +1,17 @@
-import { NextResponse } from 'next/server';
-import { getProducts } from '@/modules/products/services';
+import { NextRequest, NextResponse } from 'next/server';
+import { getProductsService, getProductByIdService } from '@/modules/products/services';
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+  const id = req.nextUrl.searchParams.get('id')
+
   try {
-    const products = await getProducts()
-    return NextResponse.json(products);
+    let response;
+    if (id) response = await getProductByIdService(id)
+    else {
+      response = await getProductsService()
+    }
+
+    return NextResponse.json(response);
   } catch (error) {
     console.error('Error fetching users:', error);
     return NextResponse.json({ error: 'Failed to fetch Products' }, { status: 500 });

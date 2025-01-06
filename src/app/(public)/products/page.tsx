@@ -1,10 +1,10 @@
 import React from 'react'
-import ProductsView from "@/modules/products/views";
+import ProductList from '@/modules/products/components/ProductList';
 
 function ProductPage() {
   return (
     <div>
-      <ProductsView />
+      <ProductList />
     </div>
   )
 }

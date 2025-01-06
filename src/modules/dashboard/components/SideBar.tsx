@@ -41,12 +41,16 @@ const items = [
 const SideBar = () => {
   const pathName = usePathname();
   const isCurrentPath = (path: string) => pathName.includes(path.toLowerCase())
-  console.log(isCurrentPath('Products'))
+
   return (
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>digital shop</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-xl font-bold my-6 mx-auto">
+            <Link href="/">
+              Digital Shop
+            </Link>
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (

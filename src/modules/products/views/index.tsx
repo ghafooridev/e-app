@@ -1,12 +1,14 @@
-import React from 'react'
-import ProductList from "../components/ProductList"
+import ProductTable from "../components/ProductTable";
+import { getProductsService } from "../services";
 
-function ProductView() {
+const ProductsView = async () => {
+  const products = await getProductsService();
+
   return (
     <div>
-      <ProductList />
+      <ProductTable products={products} />
     </div>
-  )
+  );
 }
 
-export default ProductView
+export default ProductsView

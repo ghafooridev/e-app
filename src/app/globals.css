@@ -86,3 +86,7 @@ body {
     @apply bg-background text-foreground;
   }
 }
+.cl-userButtonPopoverFooter,
+.cl-footer div:last-child,.cl-navbar div:last-child {
+    display: none;
+}

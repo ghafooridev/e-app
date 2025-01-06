@@ -1,9 +1,9 @@
-import ProductTable from '@/modules/dashboard/components/ProductTable'
+import ProductsView from '@/modules/products/views'
 import React from 'react'
 
 function ProductPage() {
   return (
-    <ProductTable />
+    <ProductsView />
   )
 }
 

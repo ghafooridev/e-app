@@ -1,5 +1,5 @@
 
-import HomeView from "@/modules/home/views"
+import HomeView from "./home/page"
 
 function Home() {
   return (

@@ -1,10 +1,11 @@
 import React from 'react'
-import { getProducts } from '../actions';
+import { getProductsService } from '../services';
 import ProductItem from './ProductItem';
 
 
+
 async function ProductList() {
-  const products = await getProducts()
+  const products = await getProductsService()
 
   return (
     <div className='flex w-full my-10 flex-wrap justify-between items-center'>

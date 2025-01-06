@@ -8,19 +8,19 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui"
-import { getProducts } from "@/modules/products/actions"
 import Image from "next/image";
-import Heading from "./Heading";
+import Heading from "../../dashboard/components/Heading";
 import { Edit, Trash2 } from "lucide-react";
 import Link from "next/link";
+import { Product } from "@prisma/client";
 
 
-const ProductTable = async () => {
-  const products = await getProducts();
+const ProductTable = async (props: { products: Product[] }) => {
+  const { products } = props;
 
   return (
     <div>
-      <Heading title="Products" count={3} link="/dashboard/products/add" />
+      <Heading title="Products" link="/dashboard/products/add" />
 
       <Table>
         <TableHeader>
@@ -61,7 +61,7 @@ const ProductTable = async () => {
         <TableFooter>
           <TableRow>
             <TableCell colSpan={5}>Total</TableCell>
-            <TableCell className="text-right">$2,500.00</TableCell>
+            <TableCell className="text-right">{products.length}</TableCell>
           </TableRow>
         </TableFooter>
       </Table>

@@ -15,4 +15,12 @@ model Product {
   quantity    Int?            @default(0) // Stock quantity
   createdAt   DateTime        @default(now()) // Automatically set to the current timestamp
   updatedAt   DateTime        @updatedAt // Automatically updated on any change
+  // images      Image[]
 }
+
+// model Image {
+//   id        String   @id @default(uuid()) // Primary key with a UUID
+//   image     String
+//   Product   Product? @relation(fields: [productId], references: [id])
+//   productId String?
+// }
