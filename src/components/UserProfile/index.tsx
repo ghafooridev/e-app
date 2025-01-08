@@ -1,4 +1,4 @@
-import { userIsAdmin } from '@/modules/users/services'
+import { userIsAdmin } from '@/app/(private)/dashboard/users/_services'
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
 import UserMenu from '../UserMenu';
 

@@ -1,17 +1,8 @@
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-  Input,
-  Label,
-  Button
 } from "@/components/ui"
 
 

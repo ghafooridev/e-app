@@ -1,5 +1,5 @@
-import UserView from '@/modules/users/views'
 import React from 'react'
+import UserView from './_views'
 
 function page() {
   return (

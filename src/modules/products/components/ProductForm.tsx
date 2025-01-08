@@ -6,7 +6,7 @@ import { upsertProductService } from '../services';
 import UploadFile from './UploadImage';
 
 
-const ProductForm: React.FC<PrismaType.Product> = async ({ id, name, category, description, image, quantity, price }) => {
+const ProductForm: React.FC<PrismaType.Product> = async ({ id, name, category, description, quantity, price }) => {
   return (
     <form action={upsertProductService} className="my-2 max-w-lg">
       <input type="hidden" name="id" defaultValue={id || ''} />

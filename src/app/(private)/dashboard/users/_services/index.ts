@@ -3,8 +3,11 @@
 import { clerkClient } from "@/config/clerk"
 import { auth } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
+import { cacheLife } from "next/dist/server/use-cache/cache-life";
 
 export const getAllUsers = async () => {
+  'use cache'
+  cacheLife('days')
   return await clerkClient.users.getUserList()
 }
 
@@ -14,6 +17,8 @@ export const getUserById = async (userId: string) => {
 }
 
 export const getUsersCount = async () => {
+  'use cache'
+  cacheLife('days')
   try {
     const userCount = await clerkClient.users.getCount();
     return userCount;

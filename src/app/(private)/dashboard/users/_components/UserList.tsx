@@ -19,10 +19,11 @@ import {
   DialogTrigger,
   DialogFooter,
 } from "@/components/ui";
-import { banUnBanUser, deleteUser } from '../services'
-import Heading from "../../dashboard/components/Heading";
+import { banUnBanUser, deleteUser } from '../_services'
+
 import { Check, Trash2, X } from "lucide-react";
 import { User } from "@clerk/nextjs/server";
+import Heading from "@/modules/dashboard/components/Heading";
 
 
 const BanUnBanAction = (props: { userId: string, banned: boolean }) => {

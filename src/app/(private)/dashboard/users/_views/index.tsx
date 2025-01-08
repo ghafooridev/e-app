@@ -1,7 +1,7 @@
 
 
-import { getAllUsers, getUsersCount } from '../services'
-import UserList from "../components/UserList";
+import { getAllUsers, getUsersCount } from '../_services'
+import UserList from "../_components/UserList";
 import { User } from "@clerk/nextjs/server";
 
 

@@ -77,14 +77,15 @@ export const uploadImage = async (image: File) => {
   )}-${uniqueSuffix}.${mime.getExtension(image.type)}`;
   await writeFile(`${uploadDir}/${filename}`, buffer);
   const fileUrl = `${relativeUploadDir}/${filename}`;
-
+  console.log(fileUrl)
   // Save to database
   debugger
-  const result = await prisma.image.create({
-    data: {
-      image: fileUrl,
-    },
-  });
+  const result: any = []
+  // = await prisma.image.create({
+  //   data: {
+  //     image: fileUrl,
+  //   },
+  // });
 
   return result
   // } catch (e) {
