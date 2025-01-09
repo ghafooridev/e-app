@@ -5,7 +5,6 @@ import { getProducts } from './service';
 
 async function Server() {
   const _data = await getProducts();
-  console.log('server page')
   return (
     <div>
       {_data.map((item: any) => {

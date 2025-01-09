@@ -2,11 +2,13 @@
 
 // import React, { Suspense } from 'react'
 // import Server from './server'
-import Client from './client'
+// import Client from './client'
 
 import { QueryClient } from '@tanstack/react-query';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client'
 import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister'
+import Server from './server';
+import { Suspense } from 'react';
 
 
 const queryClient = new QueryClient({
@@ -37,7 +39,9 @@ function page() {
         client={queryClient}
         persistOptions={{ persister }}
       >
-        <Client />
+        <Suspense fallback={<div>loading</div>}>
+          <Server />
+        </Suspense>
       </PersistQueryClientProvider>,
     </div>
   )
